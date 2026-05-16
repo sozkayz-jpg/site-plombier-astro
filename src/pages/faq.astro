@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "FAQ Plomberie | Plombier Pro Paris | Questions & Réponses";
+const description = "FAQ plomberie : prix, urgences, garanties. Réponses claires de Plombier Pro Paris. Devis gratuit. Intervention rapide 24h/24.";
+const keywords = "faq plomberie, prix plombier Paris, urgence fuite eau, garantie decennale, entretien chaudiere, devis plomberie";
+const canonical = "https://www.plombierpro.fr/faq.html";
+const ogImage = "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&h=630&fit=crop";
+const ogTitle = "FAQ Plomberie | Plombier Pro Paris";
+const ogDescription = "Questions fréquentes sur la plomberie : tarifs, urgences, garanties. Réponses claires de Plombier Pro.";
+const twitterTitle = "FAQ Plomberie | Plombier Pro";
+const twitterDescription = "Réponses aux questions fréquentes sur la plomberie et nos services.";
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.plombierpro.fr/"},
+    {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://www.plombierpro.fr/faq.html"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quel est le prix d'un plombier à Paris ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le tarif horaire d'un plombier professionnel à Paris se situe généralement entre 60€ et 120€ TTC selon la complexité de l'intervention. Chez Plombier Pro, nous pratiquons des prix transparents avec devis gratuit avant chaque intervention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment réagir en cas de fuite d'eau urgente ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En cas de fuite d'eau urgente, coupez immédiatement l'alimentation générale en eau via le robinet d'arrêt principal, ouvrez les robinets pour vider les tuyaux, appelez un plombier d'urgence au 01 23 45 67 89, essorez l'eau accumulée et protégez vos meubles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels sont les délais d'intervention pour une urgence plomberie ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plombier Pro garantit une intervention d'urgence sous 30 minutes à 2 heures selon votre localisation à Paris et en Île-de-France. Notre service d'urgence plomberie fonctionne 24 heures sur 24, 7 jours sur 7."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={canonical}
+  ogImage={ogImage}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  twitterTitle={twitterTitle}
+  twitterDescription={twitterDescription}
+  schemas={[breadcrumbSchema, faqSchema]}
+>
+  <main id="main-content">
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Questions Fréquentes</span>
+          <h2 id="faq-heading">FAQ Plomberie</h2>
+          <p>Réponses claires et précises aux questions les plus fréquentes sur la plomberie et nos services.</p>
+        </div>
+        <div class="faq__list">
+          <div class="faq-item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              Quel est le prix d'un plombier à Paris ?
+              <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Le tarif horaire d'un plombier professionnel à Paris se situe généralement entre 60€ et 120€ TTC selon la complexité de l'intervention. Voici nos tarifs indicatifs :</p>
+                <ul>
+                  <li>Déplacement et diagnostic : 40€ à 60€</li>
+                  <li>Tarif horaire standard : 70€ TTC</li>
+                  <li>Urgence soirée/week-end : 90€ à 120€ TTC</li>
+                  <li>Débouchage simple : 120€ à 180€</li>
+                  <li>Réparation fuite d'eau : 150€ à 300€</li>
+                </ul>
+                <p>Chez Plombier Pro, nous pratiquons des prix transparents avec devis gratuit avant chaque intervention. Pas de frais cachés.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              Comment réagir en cas de fuite d'eau urgente ?
+              <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>En cas de fuite d'eau urgente, suivez ces étapes immédiatement :</p>
+                <ul>
+                  <li><strong>Coupez l'alimentation générale en eau</strong> via le robinet d'arrêt principal, généralement situé près du compteur d'eau ou dans la cave.</li>
+                  <li><strong>Ouvrez les robinets</strong> pour vider les tuyaux restants et réduire la pression.</li>
+                  <li><strong>Appelez un plombier d'urgence</strong> au 01 23 45 67 89. Notre service est disponible 24h/24.</li>
+                  <li><strong>Essorez l'eau</strong> accumulée et protégez vos meubles, sols et appareils électriques.</li>
+                  <li><strong>Prenez des photos</strong> des dégâts pour votre assurance.</li>
+                </ul>
+                <p>Ne tardez pas à appeler : une fuite non traitée peut causer des dégâts des eaux coûteux et des problèmes structurels graves.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              Quels sont les délais d'intervention pour une urgence plomberie ?
+              <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Plombier Pro garantit des délais d'intervention parmi les plus rapides de la région parisienne :</p>
+                <ul>
+                  <li><strong>Paris intra-muros</strong> : 20 à 45 minutes en moyenne</li>
+                  <li><strong>Petite couronne</strong> (92, 93, 94) : 45 minutes à 1h30</li>
+                  <li><strong>Grande couronne</strong> (77, 78, 91, 95) : 1h à 2h maximum</li>
+                </ul>
+                <p>Notre service d'urgence plomberie fonctionne 24 heures sur 24, 7 jours sur 7, y compris les jours fériés. En cas d'inondation majeure ou de fuite de gaz, nous priorisons votre appel et mobilisons immédiatement le plombier le plus proche.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              Faites-vous l'entretien des chaudières gaz et électriques ?
+              <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Oui, nous réalisons l'entretien annuel obligatoire de toutes marques de chaudières gaz et électriques. L'entretien comprend :</p>
+                <ul>
+                  <li>Nettoyage du brûleur et des échangeurs</li>
+                  <li>Vérification des sécurités et régulations</li>
+                  <li>Contrôle de l'étanchéité gaz et des évacuations</li>
+                  <li>Réglage de la combustion et mesure des rejets</li>
+                  <li>Délivrance de l'attestation d'entretien obligatoire pour l'assurance</li>
+                </ul>
+                <p>L'entretien annuel est obligatoire par la loi pour les chaudières gaz et réduit les risques d'intoxication au monoxyde de carbone. Il permet aussi d'économiser jusqu'à 12% sur votre facture d'énergie.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              Proposez-vous la garantie décennale sur vos installations ?
+              <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Oui, absolument. Conformément à la loi française, toutes nos installations de plomberie, chauffage et sanitaires bénéficient de la garantie décennale. Cela couvre :</p>
+                <ul>
+                  <li>Les défauts d'étanchéité</li>
+                  <li>Les problèmes structurels liés à l'installation</li>
+                  <li>Les dommages compromettant la solidité de l'ouvrage</li>
+                </ul>
+                <p>Nous sommes assurés en responsabilité civile décennale et civile professionnelle. Toutes nos interventions sont facturées avec TVA récupérable et mentionnées sur devis détaillé préalable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

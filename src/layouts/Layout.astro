@@ -1,0 +1,189 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+  schemas?: string[];
+}
+
+const {
+  title,
+  description = "Plombier professionnel à Paris et IDF. Urgence plomberie 24h/24, 7j/7. Réparation fuite d'eau, débouchage, chauffage, installation sanitaire. Devis gratuit sous 1h.",
+  keywords = "plombier Paris, plomberie urgence, dépannage plomberie, fuite d'eau, débouchage canalisation, chauffagiste, installation sanitaire, plombier 24h",
+  canonical = "https://www.plombierpro.fr/",
+  ogImage = "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&h=630&fit=crop",
+  ogTitle = title,
+  ogDescription = description,
+  twitterTitle = title,
+  twitterDescription = description,
+  twitterImage = ogImage,
+  schemas = []
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === 'index.html' && (pathname === '/' || pathname === '/index.html')) return true;
+  return pathname.includes(href);
+};
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
+  <meta name="author" content="Plombier Pro">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href={canonical}>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:title" content={ogTitle}>
+  <meta property="og:description" content={ogDescription}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Plombier Pro">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content={canonical}>
+  <meta name="twitter:title" content={twitterTitle}>
+  <meta name="twitter:description" content={twitterDescription}>
+  <meta name="twitter:image" content={twitterImage}>
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="/css/style.css">
+
+  {schemas.map((schema) => (
+    <script type="application/ld+json" set:html={schema}></script>
+  ))}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <div class="trust-bar">
+    <div class="container">
+      <ul class="trust-bar__list">
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Devis gratuit sous 1h</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Intervention 30 min</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Garantie décennale</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <a href="tel:+33123456789">01 23 45 67 89</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <header id="header" class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="logo" aria-label="Plombier Pro - Accueil">
+          <span class="logo__text"><strong>Plombier</strong> Pro</span>
+        </a>
+
+        <nav class="nav-desktop" role="navigation" aria-label="Navigation principale">
+          <ul class="nav__list">
+            <li><a href="index.html" class="nav__link" aria-current={isActive('index.html') ? 'page' : undefined}>Accueil</a></li>
+            <li><a href="services.html" class="nav__link" aria-current={isActive('services.html') ? 'page' : undefined}>Services</a></li>
+            <li><a href="a-propos.html" class="nav__link" aria-current={isActive('a-propos.html') ? 'page' : undefined}>À Propos</a></li>
+            <li><a href="faq.html" class="nav__link" aria-current={isActive('faq.html') ? 'page' : undefined}>FAQ</a></li>
+            <li><a href="contact.html" class="nav__link" aria-current={isActive('contact.html') ? 'page' : undefined}>Contact</a></li>
+          </ul>
+          <a href="tel:+33123456789" class="btn btn--cta header__cta" aria-label="Appeler pour une urgence">01 23 45 67 89</a>
+        </nav>
+
+        <button id="menuToggle" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="navMobile" class="nav nav-mobile" role="navigation" aria-label="Navigation mobile">
+    <ul class="nav__list">
+      <li><a href="index.html" class="nav__link">Accueil</a></li>
+      <li><a href="services.html" class="nav__link">Services</a></li>
+      <li><a href="a-propos.html" class="nav__link">À Propos</a></li>
+      <li><a href="faq.html" class="nav__link">FAQ</a></li>
+      <li><a href="contact.html" class="nav__link">Contact</a></li>
+      <li><a href="tel:+33123456789" class="btn btn--cta">01 23 45 67 89</a></li>
+    </ul>
+  </nav>
+  <div id="navOverlay" class="nav-overlay"></div>
+
+  <slot />
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="logo" aria-label="Plombier Pro">
+            <span class="logo__text"><strong>Plombier</strong> Pro</span>
+          </a>
+          <p>Entreprise de plomberie professionnelle à Paris et Île-de-France depuis 2009. Interventions d'urgence 24h/24, installations et rénovations plomberie.</p>
+          <div class="footer__badges">
+            <span class="badge">Devis gratuit</span>
+            <span class="badge">Garantie décennale</span>
+            <span class="badge">Assurance RCP</span>
+          </div>
+        </div>
+        <div class="footer__links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Réparation Fuite</a></li>
+            <li><a href="services.html">Débouchage</a></li>
+            <li><a href="services.html">Chauffage</a></li>
+            <li><a href="services.html">Sanitaire</a></li>
+            <li><a href="services.html">Urgence 24/7</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Liens Rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html">À Propos</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions Légales</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Contact</h4>
+          <ul>
+            <li><span style="color:var(--gray-500);font-size:.9rem;">15 Rue de la Plomberie, 75011 Paris</span></li>
+            <li><a href="tel:+33123456789">01 23 45 67 89</a></li>
+            <li><a href="mailto:contact@plombierpro.fr">contact@plombierpro.fr</a></li>
+            <li><span style="color:var(--gray-500);font-size:.9rem;">Lun-Ven: 8h-19h | Urgence 24/7</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Plombier Pro. Tous droits réservés. | SIRET : 123 456 789 00012 | Assurances RCP et décennale souscrites.</p>
+        <div class="footer__legal">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut de page">&uarr;</button>
+  <a href="tel:+33123456789" class="floating-cta" aria-label="Appeler urgence plomberie">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

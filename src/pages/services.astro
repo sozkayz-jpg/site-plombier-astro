@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Nos Services de Plomberie | Plombier Pro Paris | Devis Gratuit";
+const description = "Découvrez nos services de plomberie : réparation fuite d'eau, débouchage canalisation, chauffage, installation sanitaire. Devis gratuit. Intervention rapide Paris et IDF.";
+const keywords = "services plomberie, réparation fuite eau, débouchage canalisation, installation sanitaire, chauffage Paris, plombier urgence";
+const canonical = "https://www.plombierpro.fr/services.html";
+const ogImage = "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&h=630&fit=crop";
+const ogTitle = "Nos Services de Plomberie | Plombier Pro Paris";
+const ogDescription = "Services complets de plomberie à Paris : fuites, débouchage, chauffage, sanitaire. Devis gratuit et intervention rapide.";
+const twitterTitle = "Nos Services de Plomberie | Plombier Pro";
+const twitterDescription = "Services professionnels de plomberie à Paris et IDF.";
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.plombierpro.fr/"},
+    {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.plombierpro.fr/services.html"}
+  ]
+});
+
+const servicesSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Réparation Fuite d'Eau",
+        "provider": {"@type": "Plumber", "name": "Plombier Pro"},
+        "areaServed": "Paris et Île-de-France",
+        "description": "Détection et réparation de fuites d'eau par plombier professionnel. Intervention urgente disponible."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "Débouchage Canalisation",
+        "provider": {"@type": "Plumber", "name": "Plombier Pro"},
+        "areaServed": "Paris et Île-de-France",
+        "description": "Débouchage efficace de canalisations par caméra et haute pression."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={canonical}
+  ogImage={ogImage}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  twitterTitle={twitterTitle}
+  twitterDescription={twitterDescription}
+  schemas={[breadcrumbSchema, servicesSchema]}
+>
+  <main id="main-content">
+    <section class="section" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Nos Services</span>
+          <h2 id="services-heading">Solutions de Plomberie Complètes</h2>
+          <p>Des services professionnels pour tous vos besoins en plomberie, chauffage et installations sanitaires dans toute l'Île-de-France.</p>
+        </div>
+        <div class="services__grid">
+          <article class="service-card fade-in">
+            <img class="service-card__img" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" alt="Plombier réparant une fuite d'eau sous un évier" loading="lazy" width="600" height="200">
+            <div class="service-card__body">
+              <h3>Réparation Fuite d'Eau</h3>
+              <p>Détection précise et réparation rapide de toutes fuites d'eau. Intervention d'urgence disponible 24h/24 pour minimiser les dégâts des eaux.</p>
+              <a href="contact.html" class="service-card__link">Demander un devis &rarr;</a>
+            </div>
+          </article>
+          <article class="service-card fade-in">
+            <img class="service-card__img" src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?w=600&q=80" alt="Équipement professionnel de débouchage de canalisation" loading="lazy" width="600" height="200">
+            <div class="service-card__body">
+              <h3>Débouchage & Curage</h3>
+              <p>Débouchage efficace de tous types de canalisations par caméra et haute pression. Curage et détartrage pour éviter les récidives.</p>
+              <a href="contact.html" class="service-card__link">Demander un devis &rarr;</a>
+            </div>
+          </article>
+          <article class="service-card fade-in">
+            <img class="service-card__img" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Installation et réparation de chaudière par un professionnel" loading="lazy" width="600" height="200">
+            <div class="service-card__body">
+              <h3>Chauffage & Chaudière</h3>
+              <p>Installation, entretien et réparation de chaudières gaz et électriques. Dépannage chauffage urgent pour ne pas rester au froid.</p>
+              <a href="contact.html" class="service-card__link">Demander un devis &rarr;</a>
+            </div>
+          </article>
+          <article class="service-card fade-in">
+            <img class="service-card__img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Salle de bain moderne avec installations sanitaires neuves" loading="lazy" width="600" height="200">
+            <div class="service-card__body">
+              <h3>Installation Sanitaire</h3>
+              <p>Installation et remplacement de robinetterie, WC, lavabos, douches et baignoires. Travaux soignés avec garantie décennale.</p>
+              <a href="contact.html" class="service-card__link">Demander un devis &rarr;</a>
+            </div>
+          </article>
+          <article class="service-card fade-in">
+            <img class="service-card__img" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80" alt="Camionnette d'urgence de plomberie prête à intervenir" loading="lazy" width="600" height="200">
+            <div class="service-card__body">
+              <h3>Dépannage Urgent 24h/24</h3>
+              <p>Service d'urgence plomberie 24h/24 et 7j/7. Intervention rapide pour inondation, évier bouché, chauffage en panne ou fuite de gaz.</p>
+              <a href="tel:+33123456789" class="service-card__link">Appeler en urgence &rarr;</a>
+            </div>
+          </article>
+          <article class="service-card fade-in">
+            <img class="service-card__img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Rénovation complète d'une salle de bain par des professionnels" loading="lazy" width="600" height="200">
+            <div class="service-card__body">
+              <h3>Rénovation Plomberie</h3>
+              <p>Rénovation complète de plomberie pour appartements et maisons. Devis détaillé, travaux propres et respect des normes en vigueur.</p>
+              <a href="contact.html" class="service-card__link">Demander un devis &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gray" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Notre processus</span>
+          <h2 id="process-heading">Votre Intervention en 4 Étapes</h2>
+        </div>
+        <div class="process__steps">
+          <div class="process-step fade-in">
+            <div class="process-step__number">1</div>
+            <h3>Contact & Diagnostic</h3>
+            <p>Appelez-nous ou remplissez le formulaire. Nous évaluons votre besoin et vous donnons un diagnostic préliminaire.</p>
+          </div>
+          <div class="process-step fade-in">
+            <div class="process-step__number">2</div>
+            <h3>Devis Gratuit</h3>
+            <p>Nous vous envoyons un devis détaillé et transparent sous 1 heure, sans engagement ni frais cachés.</p>
+          </div>
+          <div class="process-step fade-in">
+            <div class="process-step__number">3</div>
+            <h3>Intervention</h3>
+            <p>Notre plombier certifié intervient à l'heure convenue avec du matériel professionnel et des pièces de qualité.</p>
+          </div>
+          <div class="process-step fade-in">
+            <div class="process-step__number">4</div>
+            <h3>Satisfaction</h3>
+            <p>Vous vérifiez les travaux, nous vous remettons la facture claire et l'attestation de garantie décennale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

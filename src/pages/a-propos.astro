@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "À Propos de Plombier Pro | Entreprise de Plomberie Paris depuis 2009";
+const description = "Plombier Pro : entreprise familiale de plomberie à Paris depuis 2009. 15 ans d'expérience, plombiers certifiés, garantie décennale. Découvrez notre histoire et nos valeurs.";
+const canonical = "https://www.plombierpro.fr/a-propos.html";
+const ogImage = "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&h=630&fit=crop";
+const ogTitle = "À Propos de Plombier Pro | Entreprise de Plomberie Paris";
+const ogDescription = "Entreprise de plomberie familiale à Paris depuis 2009. 15 ans d'expérience et savoir-faire.";
+const twitterTitle = "À Propos de Plombier Pro";
+const twitterDescription = "Entreprise de plomberie à Paris depuis 2009.";
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.plombierpro.fr/"},
+    {"@type": "ListItem", "position": 2, "name": "À Propos", "item": "https://www.plombierpro.fr/a-propos.html"}
+  ]
+});
+
+const aboutSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "À Propos de Plombier Pro",
+  "description": "Historique et valeurs de l'entreprise de plomberie Plombier Pro à Paris.",
+  "mainEntity": {
+    "@type": "Plumber",
+    "name": "Plombier Pro",
+    "foundingDate": "2009",
+    "founders": [
+      {"@type": "Person", "name": "Jean Dupont", "jobTitle": "Fondateur et Plombier Chef"}
+    ],
+    "numberOfEmployees": {"@type": "QuantitativeValue", "value": "12"},
+    "areaServed": "Paris et Île-de-France"
+  }
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  twitterTitle={twitterTitle}
+  twitterDescription={twitterDescription}
+  schemas={[breadcrumbSchema, aboutSchema]}
+>
+  <main id="main-content">
+    <section class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Notre Histoire</span>
+          <h2 id="about-heading">15 Ans d'Expertise en Plomberie</h2>
+          <p>Une entreprise familiale de plomberie à votre service depuis 2009. Professionnalisme, transparence et excellence au coeur de notre métier.</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; color: var(--gray-600); line-height: 1.8;">
+          <p style="margin-bottom: 1rem;">Fondée en 2009 par Jean Dupont, Plombier Pro est née d'une passion pour un travail bien fait et d'un engagement envers la satisfaction client. Ce qui a commencé comme une petite entreprise familiale est devenu aujourd'hui une référence en matière de plomberie dans la région parisienne.</p>
+          <p style="margin-bottom: 1rem;">Notre équipe de 12 plombiers certifiés intervient chaque jour sur des centaines de chantiers, des simples dépannages urgents aux rénovations complètes de plomberie dans les appartements et maisons de la capitale.</p>
+          <p style="margin-bottom: 2rem;">Nous croyons que chaque client mérite un service rapide, honnête et de qualité. C'est pourquoi nous investissons continuellement dans la formation de nos équipes et dans les technologies les plus récentes de détection et de réparation.</p>
+          <div class="text-center">
+            <a href="contact.html" class="btn btn--primary">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gray" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Nos Valeurs</span>
+          <h2 id="values-heading">Ce Qui Nous Anime</h2>
+          <p>Quatre valeurs fondamentales guident chacune de nos interventions et chacune de nos décisions.</p>
+        </div>
+        <div class="why-us__grid">
+          <div class="why-card fade-in">
+            <div class="why-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Excellence Technique</h3>
+            <p>Tous nos artisans sont diplômés d'État et suivent une formation continue annuelle. Nous utilisons exclusivement des outils et matériaux certifiés aux normes françaises et européennes.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Transparence Totale</h3>
+            <p>Devis détaillé gratuit avant chaque intervention, tarifs conformes à la grille conventionnelle, facturation claire sans surprises. Nous expliquons chaque étape du travail réalisé.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <h3>Respect des Délais</h3>
+            <p>Nous savons qu'un problème de plomberie perturbe votre quotidien. C'est pourquoi nous nous engageons sur des horaires d'intervention précis et respectons scrupuleusement les délais annoncés.</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Responsabilité</h3>
+            <p>Assurances responsabilité civile professionnelle et décennale souscrites et à jour. Nous assurons le suivi post-intervention et réactivons immédiatement toute garantie si nécessaire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--blue-800); color: #fff;" aria-labelledby="stats-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" style="color: #fdba74;">Nos Chiffres</span>
+          <h2 id="stats-heading" style="color: #fff;">Des Résultats Qui Parlent</h2>
+        </div>
+        <div class="hero__trust" style="justify-content: center; gap: 48px; flex-wrap: wrap;">
+          <div class="hero__trust-item">
+            <div class="hero__trust-number stat-number" data-target="15" data-suffix="+" style="color: #fdba74;">0</div>
+            <div class="hero__trust-label" style="color: rgba(255,255,255,.7);">Ans d'existence</div>
+          </div>
+          <div class="hero__trust-divider" style="background: rgba(255,255,255,.2);"></div>
+          <div class="hero__trust-item">
+            <div class="hero__trust-number stat-number" data-target="12" data-suffix="" style="color: #fdba74;">0</div>
+            <div class="hero__trust-label" style="color: rgba(255,255,255,.7);">Professionnels</div>
+          </div>
+          <div class="hero__trust-divider" style="background: rgba(255,255,255,.2);"></div>
+          <div class="hero__trust-item">
+            <div class="hero__trust-number stat-number" data-target="287" data-suffix="" style="color: #fdba74;">0</div>
+            <div class="hero__trust-label" style="color: rgba(255,255,255,.7);">Avis positifs</div>
+          </div>
+          <div class="hero__trust-divider" style="background: rgba(255,255,255,.2);"></div>
+          <div class="hero__trust-item">
+            <div class="hero__trust-number stat-number" data-target="5000" data-suffix="+" style="color: #fdba74;">0</div>
+            <div class="hero__trust-label" style="color: rgba(255,255,255,.7);">Interventions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

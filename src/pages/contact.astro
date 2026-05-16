@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Contact Plombier Pro | Devis Gratuit Plomberie Paris - 01 23 45 67 89";
+const description = "Contactez Plombier Pro pour un devis gratuit plomberie. Urgence 24h/24 au 01 23 45 67 89. Formulaire de contact rapide. Intervention Paris et IDF.";
+const keywords = "contact plombier Paris, devis plomberie gratuit, urgence plomberie telephone, plombier Paris 11, rendez-vous plombier";
+const canonical = "https://www.plombierpro.fr/contact.html";
+const ogImage = "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&h=630&fit=crop";
+const ogTitle = "Contact Plombier Pro | Devis Gratuit Paris";
+const ogDescription = "Contactez notre équipe pour un devis gratuit ou une urgence plomberie 24h/24.";
+const twitterTitle = "Contact Plombier Pro";
+const twitterDescription = "Devis gratuit et urgence plomberie 24h/24.";
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.plombierpro.fr/"},
+    {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.plombierpro.fr/contact.html"}
+  ]
+});
+
+const contactSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Plombier Pro",
+  "description": "Page de contact de Plombier Pro pour devis gratuit et urgences plomberie.",
+  "mainEntity": {
+    "@type": "Plumber",
+    "name": "Plombier Pro",
+    "telephone": "+33123456789",
+    "email": "contact@plombierpro.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "15 Rue de la Plomberie",
+      "addressLocality": "Paris",
+      "addressRegion": "Île-de-France",
+      "postalCode": "75011",
+      "addressCountry": "FR"
+    }
+  }
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={canonical}
+  ogImage={ogImage}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  twitterTitle={twitterTitle}
+  twitterDescription={twitterDescription}
+  schemas={[breadcrumbSchema, contactSchema]}
+>
+  <main id="main-content">
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Contact</span>
+          <h2 id="contact-heading">Demandez un Devis Gratuit</h2>
+          <p>Remplissez ce formulaire et nous vous recontactons sous 1 heure avec un devis détaillé et transparent.</p>
+        </div>
+        <div class="contact__inner">
+          <div class="contact__info">
+            <h3>Informations de contact</h3>
+            <p>Disponible 24h/24 pour toute urgence plomberie à Paris et en Île-de-France.</p>
+            <div class="contact__item">
+              <div class="contact__item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact__item-body">
+                <strong>Urgence 24h/24</strong>
+                <a href="tel:+33123456789">01 23 45 67 89</a>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact__item-body">
+                <strong>Email</strong>
+                <a href="mailto:contact@plombierpro.fr">contact@plombierpro.fr</a>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact__item-body">
+                <strong>Adresse</strong>
+                <span>15 Rue de la Plomberie, 75011 Paris</span>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="contact__item-body">
+                <strong>Horaires d'ouverture</strong>
+                <span>Lun-Ven : 8h00 - 19h00 | Sam : 9h00 - 17h00</span>
+                <span>Urgence : 24h/24, 7j/7</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact__form">
+            <h3>Demander un devis</h3>
+            <form id="contactForm" action="#" method="POST" novalidate>
+              <div class="form-group">
+                <label for="prenom">Prénom *</label>
+                <input type="text" id="prenom" name="prenom" required autocomplete="given-name" placeholder="Votre prénom">
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom *</label>
+                <input type="text" id="nom" name="nom" required autocomplete="family-name" placeholder="Votre nom">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="exemple@email.fr">
+              </div>
+              <div class="form-group">
+                <label for="telephone">Téléphone *</label>
+                <input type="tel" id="telephone" name="telephone" required autocomplete="tel" placeholder="01 23 45 67 89">
+              </div>
+              <div class="form-group">
+                <label for="service">Type de service *</label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Sélectionnez un service</option>
+                  <option value="fuite">Réparation fuite d'eau</option>
+                  <option value="debouchage">Débouchage canalisation</option>
+                  <option value="chauffage">Chauffage / Chaudière</option>
+                  <option value="sanitaire">Installation sanitaire</option>
+                  <option value="urgence">Urgence plomberie</option>
+                  <option value="renovation">Rénovation complète</option>
+                  <option value="autre">Autre demande</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="codePostal">Code postal *</label>
+                <input type="text" id="codePostal" name="codePostal" required autocomplete="postal-code" placeholder="75011" pattern="[0-9]{5}">
+              </div>
+              <div class="form-group">
+                <label for="message">Description du problème *</label>
+                <textarea id="message" name="message" required placeholder="Décrivez votre problème de plomberie en détail (localisation de la fuite, type de canalisation bouchée, marque de la chaudière, etc.)"></textarea>
+              </div>
+              <div class="form-group">
+                <label style="display:flex;align-items:center;gap:8px;font-weight:500;"><input type="checkbox" id="urgence" name="urgence" style="width:auto;margin:0;"> C'est une urgence (intervention sous 2h)</label>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Envoyer ma demande</button>
+              <p class="form-notice">* Champs obligatoires. En soumettant ce formulaire, vous acceptez d'être contacté par Plombier Pro dans les meilleurs délais.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gray" aria-labelledby="map-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Où Nous Trouver</span>
+          <h2 id="map-heading">Notre Localisation</h2>
+          <p>Basés dans le 11ème arrondissement de Paris, nous intervenons dans toute la capitale et l'Île-de-France.</p>
+        </div>
+        <div class="zones__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337894978083!2d2.372039315674!3d48.856614079287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzIzLjgiTiAywrAyMycxOS4zIkE!5e0!3m2!1sfr!2sfr!4v1609459200000!5m2!1sfr!2sfr" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps - Localisation Plombier Pro Paris 11ème"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

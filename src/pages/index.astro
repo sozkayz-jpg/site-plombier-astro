@@ -1,0 +1,584 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const plumberSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "Plombier Pro",
+  "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800",
+  "url": "https://www.plombierpro.fr",
+  "telephone": "+33123456789",
+  "email": "contact@plombierpro.fr",
+  "priceRange": "€€",
+  "description": "Entreprise de plomberie professionnelle à Paris et Île-de-France. Spécialisée en urgences plomberie 24h/24, réparation de fuites d'eau, débouchage de canalisations, installation de chauffage et sanitaires.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "15 Rue de la Plomberie",
+    "addressLocality": "Paris",
+    "addressRegion": "Île-de-France",
+    "postalCode": "75011",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.8566,
+    "longitude": 2.3522
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "00:00", "closes": "23:59", "description": "Service d'urgence 24h/24" }
+  ],
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.8566, "longitude": 2.3522 },
+    "geoRadius": "50000",
+    "description": "Paris et Île-de-France"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de Plomberie",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Réparation fuite d'eau", "description": "Détection et réparation de fuites d'eau rapide et efficace" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Débouchage canalisation", "description": "Débouchage et curage de canalisations tous diamètres" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Installation chauffage", "description": "Installation et entretien de chaudières et systèmes de chauffage" } }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "287",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    { "@type": "Review", "author": { "@type": "Person", "name": "Marie D." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Intervention rapide pour une fuite d'eau en pleine nuit. Plombier professionnel et efficace. Je recommande vivement.", "datePublished": "2026-04-15" },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Pierre L." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Très satisfait du remplacement de ma chaudière. Travail soigné, prix transparent. Une entreprise de plomberie sérieuse.", "datePublished": "2026-03-22" }
+  ]
+});
+
+const websiteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Plombier Pro",
+  "url": "https://www.plombierpro.fr",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.plombierpro.fr/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quel est le prix d'un plombier à Paris ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Le tarif horaire d'un plombier professionnel à Paris se situe généralement entre 60€ et 120€ TTC selon la complexité de l'intervention. Chez Plombier Pro, nous pratiquons des prix transparents avec devis gratuit avant chaque intervention." }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment réagir en cas de fuite d'eau urgente ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En cas de fuite d'eau urgente, coupez immédiatement l'alimentation générale en eau via le robinet d'arrêt principal, ouvrez les robinets pour vider les tuyaux, appelez un plombier d'urgence au 01 23 45 67 89, essorez l'eau accumulée et protégez vos meubles." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels sont les délais d'intervention pour une urgence plomberie ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Plombier Pro garantit une intervention d'urgence sous 30 minutes à 2 heures selon votre localisation à Paris et en Île-de-France. Notre service d'urgence plomberie fonctionne 24 heures sur 24, 7 jours sur 7." }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Plombier Pro Paris | Plomberie Urgence 24h/7j | Devis Gratuit"
+  description="Plombier professionnel à Paris et IDF. Urgence plomberie 24h/24, 7j/7. Réparation fuite d'eau, débouchage, chauffage, installation sanitaire. Devis gratuit sous 1h."
+  canonical="https://www.plombierpro.fr/"
+  schemas={[plumberSchema, websiteSchema, faqSchema]}
+>
+
+<main id="main-content">
+  <section class="hero" aria-label="Accroche principale">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Plombier agréé depuis 2009
+          </div>
+          <h1>Plombier Professionnel à <mark>Paris</mark> et Île-de-France</h1>
+          <p class="hero__sub">Intervention d'urgence 24h/24 et 7j/7. Réparation de fuites, débouchage, chauffage et installations sanitaires. Devis gratuit sous 1 heure.</p>
+          <div class="hero__actions">
+            <a href="tel:+33123456789" class="btn btn--primary btn--lg">Urgence : 01 23 45 67 89</a>
+            <a href="#contact" class="btn btn--outline btn--lg">Demander un devis</a>
+          </div>
+          <div class="hero__trust">
+            <div class="hero__trust-item">
+              <div class="hero__trust-number stat-number" data-target="15" data-suffix="+">0</div>
+              <div class="hero__trust-label">Ans d'expérience</div>
+            </div>
+            <div class="hero__trust-divider"></div>
+            <div class="hero__trust-item">
+              <div class="hero__trust-number stat-number" data-target="287" data-suffix="">0</div>
+              <div class="hero__trust-label">Clients satisfaits</div>
+            </div>
+            <div class="hero__trust-divider"></div>
+            <div class="hero__trust-item">
+              <div class="hero__trust-number stat-number" data-target="30" data-suffix=" min">0</div>
+              <div class="hero__trust-label">Temps de réponse</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img class="hero__photo" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80" alt="Plombier professionnel réparant une canalisation dans une cuisine moderne" loading="eager" width="800" height="600">
+          <div class="hero__card hero__card--1">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Artisans certifiés</span>
+          </div>
+          <div class="hero__card hero__card--2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Intervention 30 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos Services</span>
+        <h2 id="services-heading">Solutions de Plomberie Complètes</h2>
+        <p>Des services professionnels pour tous vos besoins en plomberie, chauffage et installations sanitaires dans toute l'Île-de-France.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card fade-in">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" alt="Plombier réparant une fuite d'eau sous un évier" loading="lazy" width="600" height="200">
+          <div class="service-card__body">
+            <h3>Réparation Fuite d'Eau</h3>
+            <p>Détection précise et réparation rapide de toutes fuites d'eau. Intervention d'urgence disponible 24h/24 pour minimiser les dégâts des eaux.</p>
+            <a href="#contact" class="service-card__link">Demander un devis &rarr;</a>
+          </div>
+        </article>
+        <article class="service-card fade-in">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?w=600&q=80" alt="Équipement professionnel de débouchage de canalisation" loading="lazy" width="600" height="200">
+          <div class="service-card__body">
+            <h3>Débouchage & Curage</h3>
+            <p>Débouchage efficace de tous types de canalisations par caméra et haute pression. Curage et détartrage pour éviter les récidives.</p>
+            <a href="#contact" class="service-card__link">Demander un devis &rarr;</a>
+          </div>
+        </article>
+        <article class="service-card fade-in">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Installation et réparation de chaudière par un professionnel" loading="lazy" width="600" height="200">
+          <div class="service-card__body">
+            <h3>Chauffage & Chaudière</h3>
+            <p>Installation, entretien et réparation de chaudières gaz et électriques. Dépannage chauffage urgent pour ne pas rester au froid.</p>
+            <a href="#contact" class="service-card__link">Demander un devis &rarr;</a>
+          </div>
+        </article>
+        <article class="service-card fade-in">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Salle de bain moderne avec installations sanitaires neuves" loading="lazy" width="600" height="200">
+          <div class="service-card__body">
+            <h3>Installation Sanitaire</h3>
+            <p>Installation et remplacement de robinetterie, WC, lavabos, douches et baignoires. Travaux soignés avec garantie décennale.</p>
+            <a href="#contact" class="service-card__link">Demander un devis &rarr;</a>
+          </div>
+        </article>
+        <article class="service-card fade-in">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80" alt="Camionnette d'urgence de plomberie prête à intervenir" loading="lazy" width="600" height="200">
+          <div class="service-card__body">
+            <h3>Dépannage Urgent 24h/24</h3>
+            <p>Service d'urgence plomberie 24h/24 et 7j/7. Intervention rapide pour inondation, évier bouché, chauffage en panne ou fuite de gaz.</p>
+            <a href="tel:+33123456789" class="service-card__link">Appeler en urgence &rarr;</a>
+          </div>
+        </article>
+        <article class="service-card fade-in">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Rénovation complète d'une salle de bain par des professionnels" loading="lazy" width="600" height="200">
+          <div class="service-card__body">
+            <h3>Rénovation Plomberie</h3>
+            <p>Rénovation complète de plomberie pour appartements et maisons. Devis détaillé, travaux propres et respect des normes en vigueur.</p>
+            <a href="#contact" class="service-card__link">Demander un devis &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="realisations" class="section section--gray" aria-labelledby="realisations-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos Réalisations</span>
+        <h2 id="realisations-heading">Exemples de Nos Interventions</h2>
+        <p>Découvrez nos chantiers de plomberie et installations sanitaires réalisés dans la région parisienne.</p>
+      </div>
+      <div class="realisations__grid">
+        <div class="realisation-item fade-in">
+          <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" alt="Plombier installant un nouveau robinet dans une cuisine moderne" loading="lazy" width="600" height="450">
+        </div>
+        <div class="realisation-item fade-in">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Salle de bain moderne avec installation sanitaire terminée" loading="lazy" width="600" height="450">
+        </div>
+        <div class="realisation-item fade-in">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Chaudière moderne installée par un chauffagiste professionnel" loading="lazy" width="600" height="450">
+        </div>
+        <div class="realisation-item fade-in">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Rénovation complète d'une salle de bain par des professionnels" loading="lazy" width="600" height="450">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pourquoi" class="section" aria-labelledby="pourquoi-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Pourquoi Nous Choisir</span>
+        <h2 id="pourquoi-heading">L'Excellence en Plomberie depuis 2009</h2>
+        <p>Notre entreprise de plomberie s'engage à vous offrir un service irréprochable, rapide et transparent à chaque intervention.</p>
+      </div>
+      <div class="why-us__grid">
+        <div class="why-card fade-in">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Intervention Ultra-Rapide</h3>
+          <p>Nos plombiers arrivent sur place en moins de 30 minutes pour les urgences à Paris et sous 2 heures en grande couronne. Disponibles 24h/24, 7j/7.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Prix Transparent & Juste</h3>
+          <p>Devis gratuit et détaillé avant chaque intervention. Pas de surprises sur la facture. Tarifs conformes à la grille conventionnelle des plombiers.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h3>Plombiers Certifiés</h3>
+          <p>Tous nos artisans plombiers sont diplômés d'État, assurés et régulièrement formés aux nouvelles technologies et normes de plomberie.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Garantie Décennale</h3>
+          <p>Toutes nos installations bénéficient de la garantie décennale. Nous utilisons exclusivement des matériaux certifiés et de première qualité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section section--gray" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Comment ça marche</span>
+        <h2 id="process-heading">Votre Intervention en 4 Étapes</h2>
+        <p>Un processus simple et transparent de la première prise de contact jusqu'à la fin des travaux.</p>
+      </div>
+      <div class="process__steps">
+        <div class="process-step fade-in">
+          <div class="process-step__number">1</div>
+          <h3>Contact & Diagnostic</h3>
+          <p>Appelez-nous ou remplissez le formulaire. Nous évaluons votre besoin et vous donnons un diagnostic préliminaire.</p>
+        </div>
+        <div class="process-step fade-in">
+          <div class="process-step__number">2</div>
+          <h3>Devis Gratuit</h3>
+          <p>Nous vous envoyons un devis détaillé et transparent sous 1 heure, sans engagement ni frais cachés.</p>
+        </div>
+        <div class="process-step fade-in">
+          <div class="process-step__number">3</div>
+          <h3>Intervention</h3>
+          <p>Notre plombier certifié intervient à l'heure convenue avec du matériel professionnel et des pièces de qualité.</p>
+        </div>
+        <div class="process-step fade-in">
+          <div class="process-step__number">4</div>
+          <h3>Satisfaction</h3>
+          <p>Vous vérifiez les travaux, nous vous remettons la facture claire et l'attestation de garantie décennale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="avis" class="section" aria-labelledby="avis-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Avis Clients</span>
+        <h2 id="avis-heading">Ce Que Disent Nos Clients</h2>
+        <p>287 avis vérifiés avec une note moyenne de 4.9/5 sur Google et Trustpilot.</p>
+      </div>
+      <div class="reviews__grid">
+        <article class="review-card fade-in">
+          <div class="review-card__stars" aria-label="Note : 5 sur 5 étoiles">★★★★★</div>
+          <p class="review-card__text">"Intervention en urgence à 2h du matin pour une fuite d'eau sous l'évier. Le plombier est arrivé en 20 minutes, a trouvé et réparé la fuite rapidement. Prix honnête et travail nickel."</p>
+          <div class="review-card__author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Photo de Marie Dupont" loading="lazy" width="44" height="44">
+            <div>
+              <div class="review-card__name">Marie Dupont</div>
+              <div class="review-card__loc">Paris 11ème - Avril 2026</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card fade-in">
+          <div class="review-card__stars" aria-label="Note : 5 sur 5 étoiles">★★★★★</div>
+          <p class="review-card__text">"Remplacement complet de la plomberie de mon appartement haussmannien. Travail soigné, respect des délais, et équipe très professionnelle. Devis respecté à la centime près."</p>
+          <div class="review-card__author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Photo de Pierre Laurent" loading="lazy" width="44" height="44">
+            <div>
+              <div class="review-card__name">Pierre Laurent</div>
+              <div class="review-card__loc">Paris 16ème - Mars 2026</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card fade-in">
+          <div class="review-card__stars" aria-label="Note : 5 sur 5 étoiles">★★★★★</div>
+          <p class="review-card__text">"Mon chauffage est tombé en panne en plein hiver. Ils sont intervenus le jour même, ont changé la pièce défectueuse et tout remis en route. Mon appartement est enfin réchauffé !"</p>
+          <div class="review-card__author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Photo de Sophie Bernard" loading="lazy" width="44" height="44">
+            <div>
+              <div class="review-card__name">Sophie Bernard</div>
+              <div class="review-card__loc">Neuilly-sur-Seine - Février 2026</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="zones" class="section section--gray" aria-labelledby="zones-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Zones d'Intervention</span>
+        <h2 id="zones-heading">Où Intervenons-Nous ?</h2>
+        <p>Basés dans le 11ème arrondissement de Paris, nous couvrons toute la capitale et l'Île-de-France.</p>
+      </div>
+      <div class="zones__grid">
+        <ul class="zones__list">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Paris (75)</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hauts-de-Seine (92)</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Seine-Saint-Denis (93)</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Val-de-Marne (94)</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Seine-et-Marne (77)</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Yvelines (78)</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Essonne (91)</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Val-d'Oise (95)</li>
+        </ul>
+        <div class="zones__map fade-in">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337894978083!2d2.372039315674!3d48.856614079287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzIzLjgiTiAywrAyMycxOS4zIkE!5e0!3m2!1sfr!2sfr!4v1609459200000!5m2!1sfr!2sfr" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte des zones d'intervention Plombier Pro Paris"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Questions Fréquentes</span>
+        <h2 id="faq-heading">FAQ Plomberie</h2>
+        <p>Réponses claires et précises aux questions les plus fréquentes sur la plomberie et nos services.</p>
+      </div>
+      <div class="faq__list">
+        <div class="faq-item fade-in">
+          <button class="faq__question" aria-expanded="false">
+            Quel est le prix d'un plombier à Paris ?
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Le tarif horaire d'un plombier professionnel à Paris se situe généralement entre 60€ et 120€ TTC selon la complexité de l'intervention. Voici nos tarifs indicatifs :</p>
+              <ul>
+                <li>Déplacement et diagnostic : 40€ à 60€</li>
+                <li>Tarif horaire standard : 70€ TTC</li>
+                <li>Urgence soirée/week-end : 90€ à 120€ TTC</li>
+                <li>Débouchage simple : 120€ à 180€</li>
+                <li>Réparation fuite d'eau : 150€ à 300€</li>
+              </ul>
+              <p>Chez Plombier Pro, nous pratiquons des prix transparents avec devis gratuit avant chaque intervention. Pas de frais cachés.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq__question" aria-expanded="false">
+            Comment réagir en cas de fuite d'eau urgente ?
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>En cas de fuite d'eau urgente, suivez ces étapes immédiatement :</p>
+              <ul>
+                <li><strong>Coupez l'alimentation générale en eau</strong> via le robinet d'arrêt principal, généralement situé près du compteur d'eau ou dans la cave.</li>
+                <li><strong>Ouvrez les robinets</strong> pour vider les tuyaux restants et réduire la pression.</li>
+                <li><strong>Appelez un plombier d'urgence</strong> au 01 23 45 67 89. Notre service est disponible 24h/24.</li>
+                <li><strong>Essorez l'eau</strong> accumulée et protégez vos meubles, sols et appareils électriques.</li>
+                <li><strong>Prenez des photos</strong> des dégâts pour votre assurance.</li>
+              </ul>
+              <p>Ne tardez pas à appeler : une fuite non traitée peut causer des dégâts des eaux coûteux et des problèmes structurels graves.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq__question" aria-expanded="false">
+            Quels sont les délais d'intervention pour une urgence plomberie ?
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Plombier Pro garantit des délais d'intervention parmi les plus rapides de la région parisienne :</p>
+              <ul>
+                <li><strong>Paris intra-muros</strong> : 20 à 45 minutes en moyenne</li>
+                <li><strong>Petite couronne</strong> (92, 93, 94) : 45 minutes à 1h30</li>
+                <li><strong>Grande couronne</strong> (77, 78, 91, 95) : 1h à 2h maximum</li>
+              </ul>
+              <p>Notre service d'urgence plomberie fonctionne 24 heures sur 24, 7 jours sur 7, y compris les jours fériés. En cas d'inondation majeure ou de fuite de gaz, nous priorisons votre appel et mobilisons immédiatement le plombier le plus proche.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq__question" aria-expanded="false">
+            Faites-vous l'entretien des chaudières gaz et électriques ?
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Oui, nous réalisons l'entretien annuel obligatoire de toutes marques de chaudières gaz et électriques. L'entretien comprend :</p>
+              <ul>
+                <li>Nettoyage du brûleur et des échangeurs</li>
+                <li>Vérification des sécurités et régulations</li>
+                <li>Contrôle de l'étanchéité gaz et des évacuations</li>
+                <li>Réglage de la combustion et mesure des rejets</li>
+                <li>Délivrance de l'attestation d'entretien obligatoire pour l'assurance</li>
+              </ul>
+              <p>L'entretien annuel est obligatoire par la loi pour les chaudières gaz et réduit les risques d'intoxication au monoxyde de carbone. Il permet aussi d'économiser jusqu'à 12% sur votre facture d'énergie.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq__question" aria-expanded="false">
+            Proposez-vous la garantie décennale sur vos installations ?
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Oui, absolument. Conformément à la loi française, toutes nos installations de plomberie, chauffage et sanitaires bénéficient de la garantie décennale. Cela couvre :</p>
+              <ul>
+                <li>Les défauts d'étanchéité</li>
+                <li>Les problèmes structurels liés à l'installation</li>
+                <li>Les dommages compromettant la solidité de l'ouvrage</li>
+              </ul>
+              <p>Nous sommes assurés en responsabilité civile décennale et civile professionnelle. Toutes nos interventions sont facturées avec TVA récupérable et mentionnées sur devis détaillé préalable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section--gray" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Contact</span>
+        <h2 id="contact-heading">Demandez un Devis Gratuit</h2>
+        <p>Remplissez ce formulaire et nous vous recontactons sous 1 heure avec un devis détaillé et transparent.</p>
+      </div>
+      <div class="contact__inner">
+        <div class="contact__info">
+          <h3>Informations de contact</h3>
+          <p>Disponible 24h/24 pour toute urgence plomberie à Paris et en Île-de-France.</p>
+
+          <div class="contact__item">
+            <div class="contact__item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact__item-body">
+              <strong>Urgence 24h/24</strong>
+              <a href="tel:+33123456789">01 23 45 67 89</a>
+            </div>
+          </div>
+
+          <div class="contact__item">
+            <div class="contact__item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact__item-body">
+              <strong>Email</strong>
+              <a href="mailto:contact@plombierpro.fr">contact@plombierpro.fr</a>
+            </div>
+          </div>
+
+          <div class="contact__item">
+            <div class="contact__item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact__item-body">
+              <strong>Adresse</strong>
+              <span>15 Rue de la Plomberie, 75011 Paris</span>
+            </div>
+          </div>
+
+          <div class="contact__item">
+            <div class="contact__item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contact__item-body">
+              <strong>Horaires d'ouverture</strong>
+              <span>Lun-Ven : 8h00 - 19h00 | Sam : 9h00 - 17h00</span>
+              <span>Urgence : 24h/24, 7j/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__form">
+          <h3>Demander un devis</h3>
+          <form id="contactForm" action="#" method="POST" novalidate>
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" required autocomplete="given-name" placeholder="Votre prénom">
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" required autocomplete="family-name" placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="exemple@email.fr">
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone *</label>
+              <input type="tel" id="telephone" name="telephone" required autocomplete="tel" placeholder="01 23 45 67 89">
+            </div>
+            <div class="form-group">
+              <label for="service">Type de service *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Sélectionnez un service</option>
+                <option value="fuite">Réparation fuite d'eau</option>
+                <option value="debouchage">Débouchage canalisation</option>
+                <option value="chauffage">Chauffage / Chaudière</option>
+                <option value="sanitaire">Installation sanitaire</option>
+                <option value="urgence">Urgence plomberie</option>
+                <option value="renovation">Rénovation complète</option>
+                <option value="autre">Autre demande</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="codePostal">Code postal *</label>
+              <input type="text" id="codePostal" name="codePostal" required autocomplete="postal-code" placeholder="75011" pattern="[0-9]{5}">
+            </div>
+            <div class="form-group">
+              <label for="message">Description du problème *</label>
+              <textarea id="message" name="message" required placeholder="Décrivez votre problème de plomberie en détail (localisation de la fuite, type de canalisation bouchée, marque de la chaudière, etc.)"></textarea>
+            </div>
+            <div class="form-group">
+              <label style="display:flex;align-items:center;gap:8px;font-weight:500;"><input type="checkbox" id="urgence" name="urgence" style="width:auto;margin:0;"> C'est une urgence (intervention sous 2h)</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Envoyer ma demande</button>
+            <p class="form-notice">* Champs obligatoires. En soumettant ce formulaire, vous acceptez d'être contacté par Plombier Pro dans les meilleurs délais.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+</Layout>
