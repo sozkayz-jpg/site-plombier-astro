@@ -1022,6 +1022,28 @@ mark {
 
 .nav-overlay.active { display: block; }
 
+/* Hero Slider & Entrance Animations */
+.hero__visual--slider { position: relative; overflow: hidden; border-radius: var(--radius); width: 100%; max-width: 480px; }
+.hero__slides { position: relative; width: 100%; aspect-ratio: 4/3; }
+.hero__slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s ease; }
+.hero__slide.active { opacity: 1; z-index: 2; }
+.hero__slide img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
+.hero__dots { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
+.hero__dot { width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s; }
+.hero__dot.active { background: #fff; }
+.hero__dot:hover { background: rgba(255,255,255,0.8); }
+
+.animate-in { opacity: 0; transform: translateY(20px); animation: heroFadeUp 0.7s ease forwards; }
+@keyframes heroFadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* Floating card subtle float */
+.hero__card { animation: float 4s ease-in-out infinite; }
+.hero__card--2 { animation-delay: 2s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 /* Animations */
 .fade-in {
     opacity: 0;

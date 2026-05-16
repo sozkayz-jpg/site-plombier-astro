@@ -104,17 +104,17 @@ const faqSchema = JSON.stringify({
     <div class="container">
       <div class="hero__inner">
         <div class="hero__content">
-          <div class="hero__badge">
+          <div class="hero__badge animate-in" style="animation-delay:0.1s">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             Plombier agréé depuis 2009
           </div>
-          <h1>Plombier Professionnel à <mark>Paris</mark> et Île-de-France</h1>
-          <p class="hero__sub">Intervention d'urgence 24h/24 et 7j/7. Réparation de fuites, débouchage, chauffage et installations sanitaires. Devis gratuit sous 1 heure.</p>
-          <div class="hero__actions">
+          <h1 class="animate-in" style="animation-delay:0.2s">Plombier Professionnel à <mark>Paris</mark> et Île-de-France</h1>
+          <p class="hero__sub animate-in" style="animation-delay:0.3s">Intervention d'urgence 24h/24 et 7j/7. Réparation de fuites, débouchage, chauffage et installations sanitaires. Devis gratuit sous 1 heure.</p>
+          <div class="hero__actions animate-in" style="animation-delay:0.4s">
             <a href="tel:+33123456789" class="btn btn--primary btn--lg">Urgence : 01 23 45 67 89</a>
             <a href="#contact" class="btn btn--outline btn--lg">Demander un devis</a>
           </div>
-          <div class="hero__trust">
+          <div class="hero__trust animate-in" style="animation-delay:0.5s">
             <div class="hero__trust-item">
               <div class="hero__trust-number stat-number" data-target="15" data-suffix="+">0</div>
               <div class="hero__trust-label">Ans d'expérience</div>
@@ -131,8 +131,23 @@ const faqSchema = JSON.stringify({
             </div>
           </div>
         </div>
-        <div class="hero__visual">
-          <img class="hero__photo" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80" alt="Plombier professionnel réparant une canalisation dans une cuisine moderne" loading="eager" width="800" height="600">
+        <div class="hero__visual hero__visual--slider">
+          <div class="hero__slides">
+            <div class="hero__slide active">
+              <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80" alt="Plombier professionnel réparant une canalisation dans une cuisine moderne" loading="eager" width="800" height="600">
+            </div>
+            <div class="hero__slide">
+              <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" alt="Salle de bain moderne avec installations sanitaires neuves" loading="lazy" width="800" height="600">
+            </div>
+            <div class="hero__slide">
+              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Camionnette d'urgence de plomberie prête à intervenir" loading="lazy" width="800" height="600">
+            </div>
+          </div>
+          <div class="hero__dots">
+            <button class="hero__dot active" aria-label="Image 1" data-slide="0"></button>
+            <button class="hero__dot" aria-label="Image 2" data-slide="1"></button>
+            <button class="hero__dot" aria-label="Image 3" data-slide="2"></button>
+          </div>
           <div class="hero__card hero__card--1">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span>Artisans certifiés</span>

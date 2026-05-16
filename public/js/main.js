@@ -69,6 +69,30 @@
       }
     }
 
+    // Hero Slider
+    const heroSlides = document.querySelectorAll('.hero__slide');
+    const heroDots = document.querySelectorAll('.hero__dot');
+    if (heroSlides.length > 0) {
+      let currentSlide = 0;
+      const totalSlides = heroSlides.length;
+      function showSlide(index) {
+        heroSlides.forEach(function(s, i) { s.classList.toggle('active', i === index); });
+        heroDots.forEach(function(d, i) { d.classList.toggle('active', i === index); });
+        currentSlide = index;
+      }
+      function nextSlide() {
+        showSlide((currentSlide + 1) % totalSlides);
+      }
+      let slideInterval = setInterval(nextSlide, 5000);
+      heroDots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() {
+          clearInterval(slideInterval);
+          showSlide(i);
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+      });
+    }
+
     // Header scroll effect
     let lastScroll = 0;
 
